@@ -13,7 +13,7 @@ h1 {
   font-size: 4.236em; }
 
 ul {
-  font-size: 1.5em; }
+  font-size: 2em; }
 
 .main-wrapper {
   position: absolute;
@@ -49,6 +49,9 @@ ul {
   position: relative;
   bottom: -80%;
   margin-right: 20px; }
+  .nav li {
+    cursor: pointer;
+    cursor: hand; }
   .nav h1, .nav ul {
     padding: 0;
     margin: 0; }
@@ -64,8 +67,9 @@ ul {
   margin-left: 20px; }
   .shows h1 {
     font-size: 2em; }
-  .shows ul {
-    font-size: 1em; }
+  .shows li {
+    font-size: 0.9em;
+    padding: 2px; }
 
 li {
   list-style-type: none; }
