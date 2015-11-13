@@ -8,7 +8,7 @@ body, html {
   height: 100%;
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   background-size: cover;
 }
 
@@ -22,11 +22,13 @@ ul {
 
 .main-wrapper {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow: auto;
+  //top: 0;
+  //bottom: 0;
+  //left: 0;
+  //right: 0;
+  //overflow: hidden;
+  height: 100%;
+  width: 100%;
 }
 
 .background {
@@ -50,51 +52,40 @@ ul {
   width: 100%;
   color: $textColor;
   position: absolute;
-  left: 0;
-  top: 0;
-  /*float: right;*/
+  z-index: 1;
 }
 
-@media all and (min-width: 900px) {
-  .content h1, ul {
-    margin: 0;
-    position: relative;
-    top: 70%;
-    right: -80%;
-    /*float: right;*/
-    z-index: 1;
-  }
-  body {
-    font-size: 12px;
-  }
-}
+.nav {
+  text-align: end;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  float: right;
+  position: relative;
+  bottom: -80%;
+  margin-right: 20px;
 
-@media all and (min-width: 500px) and (max-width: 900px) {
-  .content h1, ul {
+  h1, ul {
+    padding: 0;
     margin: 0;
-    position: relative;
-    top: 55%;
-    right: -65%;
-    /*float: right;*/
-    z-index: 1;
-  }
-  body{
-    font-size: 13px;
   }
 }
 
-@media all and (max-width: 500px) {
-  .content h1, ul {
-    margin: 0;
-    position: relative;
-    top: 30%;
-    right: -30%;
-    /*float: right;*/
-    z-index: 1;
+.shows{
+  h1{
+    font-size: 2em;
   }
-  body{
-    font-size: 14px;
+  ul {
+    font-size: 1em;
   }
+
+  background-color: rgba(0, 89, 143, 0.38);
+  width: 50%;
+  height: 100%;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  float: left;
+  margin-left: 20px;
 }
 
 li {
@@ -105,3 +96,99 @@ a {
   text-decoration: none;
   color: $textColor;
 }
+
+
+//@media all and (min-device-width: 900px) {
+//  .content h1, ul {
+//    margin: 0;
+//    position: relative;
+//    top: 70%;
+//    right: -80%;
+//    /*float: right;*/
+//    z-index: 1;
+//  }
+//  body {
+//    font-size: 12px;
+//  }
+//}
+//
+//@media all and (min-width: 900px) {
+//  .content h1, ul {
+//    margin: 0;
+//    position: relative;
+//    top: 70%;
+//    right: -80%;
+//    /*float: right;*/
+//    z-index: 1;
+//  }
+//  body {
+//    font-size: 12px;
+//  }
+//}
+//
+//@media all and (min-width: 500px) and (max-width: 900px) {
+//  .content h1, ul {
+//    margin: 0;
+//    position: relative;
+//    top: 55%;
+//    right: -65%;
+//    /*float: right;*/
+//    z-index: 1;
+//  }
+//  body{
+//    font-size: 13px;
+//  }
+//}
+//
+//@media all and (min-device-width: 500px) and (max-device-width: 900px) {
+//  .content h1, ul {
+//    margin: 0;
+//    position: relative;
+//    top: 75%;
+//    right: -65%;
+//    /*float: right;*/
+//    z-index: 1;
+//  }
+//  body{
+//    font-size: 13px;
+//  }
+//}
+
+@media (max-device-width: 900px) {
+  .nav {
+    text-align: end;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    float: right;
+    position: relative;
+    bottom: -60%;
+    margin-right: 20px;
+    h1{
+      font-size: 4em;
+    }
+    ul {
+      font-size: 2em;
+    }
+  }
+
+  .shows{
+    h1{
+      font-size: 3em;
+    }
+    ul {
+      font-size: 1.5em;
+    }
+    width: 60%;
+
+  }
+  body{
+    font-size: 15px;
+  }
+}
+
+@media (max-height: 500px) {
+  .nav {
+    bottom: -60%;
+  }
+}
+

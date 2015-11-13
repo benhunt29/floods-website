@@ -6,7 +6,7 @@ body, html {
   height: 100%;
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   background-size: cover; }
 
 h1 {
@@ -17,11 +17,8 @@ ul {
 
 .main-wrapper {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow: auto; }
+  height: 100%;
+  width: 100%; }
 
 .background {
   position: absolute;
@@ -42,42 +39,33 @@ ul {
   width: 100%;
   color: #fff;
   position: absolute;
-  left: 0;
-  top: 0;
-  /*float: right;*/ }
+  z-index: 1; }
 
-@media all and (min-width: 900px) {
-  .content h1, ul {
-    margin: 0;
-    position: relative;
-    top: 70%;
-    right: -80%;
-    /*float: right;*/
-    z-index: 1; }
-  body {
-    font-size: 12px; } }
+.nav {
+  text-align: end;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  float: right;
+  position: relative;
+  bottom: -80%;
+  margin-right: 20px; }
+  .nav h1, .nav ul {
+    padding: 0;
+    margin: 0; }
 
-@media all and (min-width: 500px) and (max-width: 900px) {
-  .content h1, ul {
-    margin: 0;
-    position: relative;
-    top: 55%;
-    right: -65%;
-    /*float: right;*/
-    z-index: 1; }
-  body {
-    font-size: 13px; } }
-
-@media all and (max-width: 500px) {
-  .content h1, ul {
-    margin: 0;
-    position: relative;
-    top: 30%;
-    right: -30%;
-    /*float: right;*/
-    z-index: 1; }
-  body {
-    font-size: 14px; } }
+.shows {
+  background-color: rgba(0, 89, 143, 0.38);
+  width: 50%;
+  height: 100%;
+  overflow-wrap: break-word;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  float: left;
+  margin-left: 20px; }
+  .shows h1 {
+    font-size: 2em; }
+  .shows ul {
+    font-size: 1em; }
 
 li {
   list-style-type: none; }
@@ -85,3 +73,29 @@ li {
 a {
   text-decoration: none;
   color: #fff; }
+
+@media (max-device-width: 900px) {
+  .nav {
+    text-align: end;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    float: right;
+    position: relative;
+    bottom: -60%;
+    margin-right: 20px; }
+    .nav h1 {
+      font-size: 4em; }
+    .nav ul {
+      font-size: 2em; }
+  .shows {
+    width: 60%; }
+    .shows h1 {
+      font-size: 3em; }
+    .shows ul {
+      font-size: 1.5em; }
+  body {
+    font-size: 15px; } }
+
+@media (max-height: 500px) {
+  .nav {
+    bottom: -60%; } }
