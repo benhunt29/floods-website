@@ -3,46 +3,51 @@ var Promise = require('bluebird');
 var Handlebars = require('hbs');
 var moment = require('moment');
 
+"use strict";
+
 $(document).ready(function(){
 
-    $('.shows').hide();
-    $(window).on('hashchange',function(){
-       render(window.location.hash);
-    });
-
-    $(window).trigger('hashchange');
+    var
+        $showsDiv = $('.shows'),
+        $showsNav = $('#showsNav');
 
     var
         FB_ID = window.__env.FB_ID,
         FB_ACCESS_TOKEN = window.__env.FB_ACCESS_TOKEN;
 
-    var shows = getShows();
-    //displayShows(shows);
+    (function init(){
+        $showsDiv.hide();
+        getShows();
+    }());
+
+    $showsNav.on('click', function(){
+        window.location.hash = 'shows';
+    });
+
+    $(window).on('hashchange',function(){
+        render(window.location.hash);
+    });
 
     function render(url){
         // Get the keyword from the url.
         var temp = url.split('/')[0];
 
-        // Hide whatever page is currently shown.
-        //$('.main-content .page').removeClass('visible');
-
         var map = {
             '': function(){
-                $('.shows').hide();
+                $showsDiv.hide();
             },
             '#shows': function(){
-               $('.shows').show();
+                $showsDiv.show();
             }
         };
 
         if(map[temp]){
          map[temp]();
         }
-
     }
 
     function getShows(){
-        //first request
+        //ajax request to Facebook API
         var fbEvents = $.ajax({
             url: 'https://graph.facebook.com/' + FB_ID + '/?fields=events&access_token=' + FB_ACCESS_TOKEN,
             method: 'GET'
@@ -57,6 +62,9 @@ $(document).ready(function(){
                     var currentShows = getCurrentShows(results.events.data);
                     displayShows(currentShows);
                 }
+            })
+            .then(function(){
+                $(window).trigger('hashchange');
             })
             //handle errors
             .catch(function(err){
@@ -79,19 +87,13 @@ $(document).ready(function(){
                 showToDisplay.state = item.place.location.state;
                 currentShows.push(showToDisplay);
             }
-           // console.log(moment(item.start_time).diff(moment().format()));
-           //console.log(moment(item.start_time).format('MMMM DD YYYY'));
-           console.log(currentShows);
         });
 
         return currentShows;
     }
 
-    var $showsNav = $('#showsNav');
 
-    $showsNav.on('click', function(){
-       window.location.hash = 'shows';
-    });
+
 
     function displayShows(data){
         var $showsDiv = $('.showDescriptions');
