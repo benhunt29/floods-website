@@ -10,7 +10,7 @@ $(document).ready(function(){
        render(window.location.hash);
     });
 
-    //$(window).trigger('hashchange');
+    $(window).trigger('hashchange');
 
     var
         FB_ID = window.__env.FB_ID,

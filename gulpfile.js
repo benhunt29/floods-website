@@ -8,6 +8,7 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     browserify = require('browserify'),
     source = require('vinyl-source-stream'),
+    buffer = require('vinyl-buffer'),
     merge = require('merge-stream');
 
 var config = {
@@ -42,6 +43,8 @@ gulp.task('copy', function(){
 gulp.task('browserify', function(){
     return browserify(config.paths.clientjs).bundle()
         .pipe(source('bundle.js'))
+        .pipe(buffer())
+        .pipe(uglify())
         .pipe(gulp.dest(config.paths.publicjs));
 });
 
