@@ -57,7 +57,6 @@ $(document).ready(function(){
         Promise.resolve(fbEvents)
             //runs when fbEvents is fullfilled
             .then(function(results){
-                console.log(results);
                 if(results){
                     var currentShows = getCurrentShows(results.events.data);
                     displayShows(currentShows);
@@ -98,10 +97,10 @@ $(document).ready(function(){
     function displayShows(data){
         var $showsDiv = $('.showDescriptions');
 
-        var theTemplateScript = $("#shows-template").html();
+        var showsTemplateScript = $("#shows-template").html();
         //Compile the template​
-        var theTemplate = Handlebars.compile (theTemplateScript);
-        $showsDiv.append (theTemplate(data));
+        var showsTemplate = Handlebars.compile (showsTemplateScript);
+        $showsDiv.append (showsTemplate(data));
 
     }
 
