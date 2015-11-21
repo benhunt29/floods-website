@@ -9,7 +9,9 @@ $(document).ready(function(){
 
     var
         $showsDiv = $('.shows'),
-        $showsNav = $('#showsNav');
+        $showsNav = $('#showsNav'),
+        $newsNav = $('#newsNav'),
+        $newsDiv = $('.news');
 
     var
         FB_ID = window.__env.FB_ID,
@@ -17,11 +19,16 @@ $(document).ready(function(){
 
     (function init(){
         $showsDiv.hide();
+        $newsDiv.hide();
         getShows();
     }());
 
     $showsNav.on('click', function(){
         window.location.hash = 'shows';
+    });
+
+    $newsNav.on('click', function(){
+       window.location.hash = 'news';
     });
 
     $(window).on('hashchange',function(){
@@ -35,9 +42,15 @@ $(document).ready(function(){
         var map = {
             '': function(){
                 $showsDiv.hide();
+                $newsDiv.hide();
             },
             '#shows': function(){
+                $newsDiv.hide();
                 $showsDiv.show();
+            },
+            '#news': function(){
+                $showsDiv.hide();
+                $newsDiv.show();
             }
         };
 
@@ -90,9 +103,6 @@ $(document).ready(function(){
 
         return currentShows;
     }
-
-
-
 
     function displayShows(data){
         var $showsDiv = $('.showDescriptions');

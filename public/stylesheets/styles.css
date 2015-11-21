@@ -47,7 +47,7 @@ ul {
   overflow-y: scroll;
   float: right;
   position: relative;
-  bottom: -80%;
+  bottom: -70%;
   margin-right: 20px; }
   .nav li {
     cursor: pointer;
@@ -56,7 +56,7 @@ ul {
     padding: 0;
     margin: 0; }
 
-.shows {
+.shows, .news {
   background-color: rgba(0, 89, 143, 0.38);
   width: 50%;
   height: 100%;
@@ -65,9 +65,9 @@ ul {
   overflow-y: scroll;
   float: left;
   margin-left: 20px; }
-  .shows h1 {
+  .shows h1, .news h1 {
     font-size: 2em; }
-  .shows li {
+  .shows li, .news li {
     font-size: 0.9em;
     padding: 2px; }
 
