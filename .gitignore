@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 .env
 
+=======
+>>>>>>> 4835b0b824b997553a3667b474de1ba169caa46a
 # Created by .ignore support plugin (hsz.mobi)
 ### Node template
 # Logs
@@ -30,7 +33,11 @@ build/Release
 # Divshot files
 .divshot-cache/*
 divshot.json
+<<<<<<< HEAD
 404.html
+=======
+error.html
+>>>>>>> 4835b0b824b997553a3667b474de1ba169caa46a
 
 # Dependency directory
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git

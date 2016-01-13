@@ -13,11 +13,21 @@ $(document).ready(function(){
         $newsNav = $('#newsNav'),
         $newsDiv = $('.news');
 
+<<<<<<< HEAD
+=======
+    var
+        FB_ID = window.__env.FB_ID,
+        FB_ACCESS_TOKEN = window.__env.FB_ACCESS_TOKEN;
+
+>>>>>>> 4835b0b824b997553a3667b474de1ba169caa46a
     (function init(){
         $showsDiv.hide();
         $newsDiv.hide();
         getShows();
+<<<<<<< HEAD
         getNews();
+=======
+>>>>>>> 4835b0b824b997553a3667b474de1ba169caa46a
     }());
 
     $showsNav.on('click', function(){
@@ -56,6 +66,7 @@ $(document).ready(function(){
         }
     }
 
+<<<<<<< HEAD
     function getNews(){
         //ajax request to Facebook API
         var news = $.ajax({
@@ -94,6 +105,12 @@ $(document).ready(function(){
         //ajax request to Facebook API
         var fbEvents = $.ajax({
             url: '/api/events',
+=======
+    function getShows(){
+        //ajax request to Facebook API
+        var fbEvents = $.ajax({
+            url: 'https://graph.facebook.com/' + FB_ID + '/?fields=events&access_token=' + FB_ACCESS_TOKEN,
+>>>>>>> 4835b0b824b997553a3667b474de1ba169caa46a
             method: 'GET'
         });
 

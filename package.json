@@ -1,5 +1,6 @@
 {
   "name": "application-name",
+<<<<<<< HEAD
   "version": "0.0.1",
   "scripts": {
     "start": "node ./bin/www"
@@ -22,4 +23,7 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   }
+=======
+  "version": "0.0.1"
+>>>>>>> 4835b0b824b997553a3667b474de1ba169caa46a
 }
