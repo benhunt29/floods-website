@@ -11,24 +11,26 @@ $(document).ready(function(){
         $showsDiv = $('.shows'),
         $showsNav = $('#showsNav'),
         $newsNav = $('#newsNav'),
-        $newsDiv = $('.news');
+        $newsDiv = $('.news'),
+        $backgroundImage = $('#bgd');
 
-<<<<<<< HEAD
-=======
-    var
-        FB_ID = window.__env.FB_ID,
-        FB_ACCESS_TOKEN = window.__env.FB_ACCESS_TOKEN;
-
->>>>>>> 4835b0b824b997553a3667b474de1ba169caa46a
     (function init(){
+        setBackground();
         $showsDiv.hide();
         $newsDiv.hide();
         getShows();
-<<<<<<< HEAD
         getNews();
-=======
->>>>>>> 4835b0b824b997553a3667b474de1ba169caa46a
     }());
+
+    function setBackground () {
+      $backgroundImage.css('backgroundImage', 'url(' + 'images/background' + getRandomIntInclusive(1,5) + '.jpeg)')
+    }
+
+    $('body').on('click', setBackground);
+
+    function getRandomIntInclusive(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 
     $showsNav.on('click', function(){
         window.location.hash = 'shows';
@@ -66,7 +68,6 @@ $(document).ready(function(){
         }
     }
 
-<<<<<<< HEAD
     function getNews(){
         //ajax request to Facebook API
         var news = $.ajax({
@@ -105,20 +106,13 @@ $(document).ready(function(){
         //ajax request to Facebook API
         var fbEvents = $.ajax({
             url: '/api/events',
-=======
-    function getShows(){
-        //ajax request to Facebook API
-        var fbEvents = $.ajax({
-            url: 'https://graph.facebook.com/' + FB_ID + '/?fields=events&access_token=' + FB_ACCESS_TOKEN,
->>>>>>> 4835b0b824b997553a3667b474de1ba169caa46a
-            method: 'GET'
-        });
-
+            method: 'GET'});
         //Bluebird promise
         Promise.resolve(fbEvents)
             //runs when fbEvents is fullfilled
             .then(function(results){
                 if(results){
+                  console.log(results);
                     var currentShows = getCurrentShows(results.events.data);
                     displayShows(currentShows);
                 }
@@ -138,7 +132,8 @@ $(document).ready(function(){
 
         allShows.forEach(function(item){
             var showToDisplay = {};
-            if(moment(item.start_time).diff(currentTime) > 0){
+            // display all shows
+            // if(moment(item.start_time).diff(currentTime) > 0){
                 showToDisplay.title = item.name;
                 showToDisplay.date = moment(item.start_time).format('MMMM DD YYYY');
                 showToDisplay.time = moment(item.start_time).format('hh:mm a');
@@ -146,7 +141,7 @@ $(document).ready(function(){
                 showToDisplay.city = item.place.location.city;
                 showToDisplay.state = item.place.location.state;
                 currentShows.push(showToDisplay);
-            }
+            // }
         });
 
         return currentShows;
@@ -161,6 +156,4 @@ $(document).ready(function(){
         $showsDiv.append (showsTemplate(data));
 
     }
-
-
  });

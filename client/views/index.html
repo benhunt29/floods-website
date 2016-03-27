@@ -8,12 +8,6 @@
 	<meta name = "Description" content = "Webpage">
 
 	<link rel="stylesheet" href="stylesheets/styles.css">
-
-<<<<<<< HEAD
-=======
-
-	<script src="/__/env.js" type="text/javascript"></script>
->>>>>>> 4835b0b824b997553a3667b474de1ba169caa46a
 	<script src = "javascripts/bundle.js" type="text/javascript"></script>
 
 </head>
@@ -22,8 +16,7 @@
 
 <div class = "main-wrapper">
 	<div class = "background">
-		<div class = "background-image" style = "background-image: url('images/background1.png');">
-
+		<div class = "background-image" id="bgd" style = "background-image: url('images/background1.png');">
 		</div>
 	</div>
 
@@ -41,7 +34,7 @@
 		{{#each this}}
 		<h1>{{title}}</h1>
 		<ul class="show-description">
-			<!--<li>{{description}}</li>-->
+			// <li>{{description}}</li>
 			<li>{{venue}}</li>
 			<li>{{city}}, {{state}}</li>
 			<li>{{date}}</li>
@@ -50,29 +43,19 @@
 		{{/each}}
 		</script> 
 
-<<<<<<< HEAD
-        <script id="news-template" type="x-handlebars-template">​
-        {{#each this}}
-        <h1>{{date}}</h1>
-        <p>{{content}}</p>
-        {{/each}}
-        </script> 
+    <script id="news-template" type="x-handlebars-template">​
+      {{#each this}}
+      <h1>{{date}}</h1>
+      <p>{{content}}</p>
+      {{/each}}
+    </script> 
 
-=======
->>>>>>> 4835b0b824b997553a3667b474de1ba169caa46a
 		<div class="shows">
 			<div class = "showDescriptions"></div>
 		</div>
 
 		<div class="news">
-<<<<<<< HEAD
 			<div class = "newsDescriptions"></div>
-=======
-			<div class = "newsDescriptions">
-				<h1>11.21.2015</h1>
-				<p>Here's a bit of news</p>
-			</div>
->>>>>>> 4835b0b824b997553a3667b474de1ba169caa46a
 		</div>
 
 	</div>

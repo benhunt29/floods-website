@@ -18,7 +18,7 @@ var config = {
         clientjs: ['./client/javascripts/app.js'],
         sass: './client/sass/*.scss',
         css: './public/stylesheets/',
-        clientImages: './client/images/*.png',
+        clientImages: './client/images/*.jpeg',
         clientViews: './client/views/*.html',
         publicImages: './public/images',
         publicViews: './public'
@@ -53,7 +53,3 @@ gulp.task('sass', function () {
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest(config.paths.css));
 });
-
-
-
-

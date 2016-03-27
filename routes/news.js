@@ -4,8 +4,7 @@ var news = require('../model/news.json');
 
 /* GET events. */
 router.get('/', function(req, res, next) {
-
-	res.json(news.news);
+	res.status(200).json(news.news);
 });
 
 module.exports = router;
