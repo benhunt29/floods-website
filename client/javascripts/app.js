@@ -112,9 +112,8 @@ $(document).ready(function(){
             //runs when fbEvents is fullfilled
             .then(function(results){
                 if(results){
-                  console.log(results);
-                    var currentShows = getCurrentShows(results.events.data);
-                    displayShows(currentShows);
+                    var allShows = getAllShows(results.events.data);
+                    displayShows(allShows);
                 }
             })
             .then(function(){
@@ -126,25 +125,30 @@ $(document).ready(function(){
             });
     }
 
-    function getCurrentShows(allShows){
-        var currentShows = [],
+    function getAllShows(allShows){
+        var showsArray = [],
             currentTime = moment().format();
 
         allShows.forEach(function(item){
             var showToDisplay = {};
-            // display all shows
-            // if(moment(item.start_time).diff(currentTime) > 0){
                 showToDisplay.title = item.name;
                 showToDisplay.date = moment(item.start_time).format('MMMM DD YYYY');
                 showToDisplay.time = moment(item.start_time).format('hh:mm a');
                 showToDisplay.venue = item.place.name;
                 showToDisplay.city = item.place.location.city;
                 showToDisplay.state = item.place.location.state;
-                currentShows.push(showToDisplay);
-            // }
+                showsArray.push(showToDisplay);
         });
 
-        return currentShows;
+        // sort by date
+        showsArray.sort(function(a, b){
+          var date1 = moment(a.date, 'MMMM DD YYYY'),
+              date2 = moment(b.date, 'MMMM DD YYYY');
+          if (date1.isAfter(date2)) return -1;
+          else if (date1.isBefore(date2)) return 1;
+          else return 0;
+        })
+        return showsArray;
     }
 
     function displayShows(data){
