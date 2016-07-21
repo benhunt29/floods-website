@@ -18,7 +18,7 @@ var config = {
         clientjs: ['./client/javascripts/app.js'],
         sass: './client/sass/*.scss',
         css: './public/stylesheets/',
-        clientImages: './client/images/*.jpeg',
+        clientImages: './client/images/*.gif',
         clientViews: './client/views/*.html',
         publicImages: './public/images',
         publicViews: './public'
