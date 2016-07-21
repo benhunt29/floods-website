@@ -11,22 +11,14 @@ $(document).ready(function(){
         $showsDiv = $('.shows'),
         $showsNav = $('#showsNav'),
         $newsNav = $('#newsNav'),
-        $newsDiv = $('.news'),
-        $backgroundImage = $('#bgd');
+        $newsDiv = $('.news');
 
     (function init(){
-        setBackground();
         $showsDiv.hide();
         $newsDiv.hide();
         getShows();
         getNews();
     }());
-
-    function setBackground () {
-      $backgroundImage.css('backgroundImage', 'url(' + 'images/background' + getRandomIntInclusive(1,5) + '.jpeg)')
-    }
-
-    $('body').on('click', setBackground);
 
     function getRandomIntInclusive(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -63,8 +55,8 @@ $(document).ready(function(){
             }
         };
 
-        if(map[temp]){
-         map[temp]();
+        if (map[temp]){
+            map[temp]();
         }
     }
 
@@ -111,8 +103,8 @@ $(document).ready(function(){
         Promise.resolve(fbEvents)
             //runs when fbEvents is fullfilled
             .then(function(results){
-                if(results){
-                    var allShows = getAllShows(results.events.data);
+                if (results) {
+                    var allShows = getAllShows(results.data);
                     displayShows(allShows);
                 }
             })
@@ -147,7 +139,7 @@ $(document).ready(function(){
           if (date1.isAfter(date2)) return -1;
           else if (date1.isBefore(date2)) return 1;
           else return 0;
-        })
+        });
         return showsArray;
     }
 
