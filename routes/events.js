@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const rp = require('request-promise');
+const mailer = require('../modules/mailer');
 
 
 /* GET events. */
@@ -11,10 +12,7 @@ router.get('/', function(req, res, next) {
 			if (data) {
 				res.status(200).json(data);
 			} else {
-				const events = [{
-					title: 'No shows currently scheduled'
-				}];
-				res.status(200).json(events);
+				res.status(200);
 			}
     })
 	});
@@ -22,7 +20,7 @@ router.get('/', function(req, res, next) {
 function getShows(){
 
 	const options = {
-	    uri: 'https://graph.facebook.com/' + process.env.FB_ID + '/?fields=events&access_token=' + process.env.FB_ACCESS_TOKEN,
+	    uri: 'https://graph.facebook.com/v2.6/' + process.env.FB_ID + '/events?access_token=' + process.env.FB_ACCESS_TOKEN,
 	    json: true // Automatically parses the JSON string in the response
 	};
 
@@ -31,7 +29,7 @@ function getShows(){
 			return res;
     	})
     	.catch(function (err) {
-            console.log(err);
+            mailer.sendMail(JSON.stringify(err));
     	});
 
 }
