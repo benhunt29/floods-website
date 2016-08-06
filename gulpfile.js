@@ -18,7 +18,7 @@ var config = {
         clientjs: ['./client/javascripts/app.js'],
         sass: './client/sass/*.scss',
         css: './public/stylesheets/',
-        clientImages: './client/images/*.gif',
+        clientImages: './client/images/*',
         clientViews: './client/views/*.html',
         publicImages: './public/images',
         publicViews: './public'
@@ -31,9 +31,9 @@ gulp.task('default', ['sass', 'browserify', 'copy'],
     });
 
 gulp.task('copy', function(){
-   var images = gulp.src(config.paths.clientImages)
+    var images = gulp.src(config.paths.clientImages)
         .pipe(gulp.dest(config.paths.publicImages));
-   var views =  gulp.src(config.paths.clientViews)
+    var views =  gulp.src(config.paths.clientViews)
         .pipe(gulp.dest(config.paths.publicViews));
 
     return merge(images,views);
