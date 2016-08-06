@@ -13,6 +13,7 @@ var events = require('./routes/events');
 var news = require('./routes/news');
 
 var app = express();
+app.enable('trust proxy');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
