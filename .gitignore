@@ -29,12 +29,6 @@ coverage
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
-# Divshot files
-.divshot-cache/*
-divshot.json
-404.html
-error.html
-
 # Dependency directory
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
 node_modules
