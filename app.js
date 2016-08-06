@@ -33,12 +33,15 @@ app.use('/api/news', news);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    res.render('error', {message: 'That\'s a 404. You took a wrong turn.', imgSource: path.join('images', '404.jpg')});
 });
 
-// error handlers
+// // error handlers
+// app.use(function(req, res, next) {
+//    if (err.status === 404 ) {
+//        res.render('views/error');
+//    }
+// });
 
 // development error handler
 // will print stacktrace
