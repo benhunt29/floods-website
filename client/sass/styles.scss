@@ -26,13 +26,15 @@ p {
 
 .main-wrapper {
   position: absolute;
-  //top: 0;
-  //bottom: 0;
-  //left: 0;
-  //right: 0;
-  //overflow: hidden;
   height: 100%;
   width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+
 }
 
 .background {
@@ -63,9 +65,7 @@ p {
   text-align: end;
   overflow-x: hidden;
   overflow-y: scroll;
-  float: right;
-  position: relative;
-  bottom: -70%;
+  align-self: flex-end;
   margin-right: 20px;
 
   li {
@@ -85,7 +85,15 @@ p {
   }
   li {
     font-size: 0.9em;
-    padding: 2px;
+    padding: 10px;
+  }
+
+  h1, p {
+    padding-left: 10px;
+  }
+
+  .newsImage {
+    margin-left: 10px;
   }
 
   background-color: rgba(0, 89, 143, 0.38);
@@ -94,7 +102,7 @@ p {
   overflow-wrap: break-word;
   overflow-x: hidden;
   overflow-y: scroll;
-  float: left;
+  align-self: flex-start;
   margin-left: 20px;
 }
 
@@ -109,13 +117,6 @@ a {
 
 @media (max-device-width: 900px) {
   .nav {
-    text-align: end;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    float: right;
-    position: relative;
-    bottom: -60%;
-    margin-right: 20px;
     h1{
       font-size: 4em;
     }
@@ -135,23 +136,11 @@ a {
 
   }
   body{
-    font-size: 15px;
-  }
-}
-
-@media (max-height: 500px) {
-  .nav {
-    bottom: -60%;
+    font-size: 20px;
   }
 }
 
 .errorImg {
-  //text-align: center;
-  //position: absolute;
-  //top: 50%;
-  //left: 50%;
-  //margin-top: -154px;
-  //margin-left: -312px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -159,5 +148,18 @@ a {
 
 .errorText {
   text-align: center;
+}
+
+.newsImage {
+  height: 20vw;
+  width: 20vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.newsDescriptions {
+  display: flex;
+  flex-direction: column;
+
 }
 
