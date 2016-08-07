@@ -23,6 +23,11 @@ p {
   height: 100%;
   width: 100%; }
 
+.content {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between; }
+
 .background {
   position: absolute;
   height: 100%;
@@ -48,9 +53,7 @@ p {
   text-align: end;
   overflow-x: hidden;
   overflow-y: scroll;
-  float: right;
-  position: relative;
-  bottom: -70%;
+  align-self: flex-end;
   margin-right: 20px; }
   .nav li {
     cursor: pointer;
@@ -66,13 +69,17 @@ p {
   overflow-wrap: break-word;
   overflow-x: hidden;
   overflow-y: scroll;
-  float: left;
+  align-self: flex-start;
   margin-left: 20px; }
   .shows h1, .news h1 {
     font-size: 2em; }
   .shows li, .news li {
     font-size: 0.9em;
-    padding: 2px; }
+    padding: 10px; }
+  .shows h1, .shows p, .news h1, .news p {
+    padding-left: 10px; }
+  .shows .newsImage, .news .newsImage {
+    margin-left: 10px; }
 
 li {
   list-style-type: none; }
@@ -82,18 +89,10 @@ a {
   color: #fff; }
 
 @media (max-device-width: 900px) {
-  .nav {
-    text-align: end;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    float: right;
-    position: relative;
-    bottom: -60%;
-    margin-right: 20px; }
-    .nav h1 {
-      font-size: 4em; }
-    .nav ul {
-      font-size: 2em; }
+  .nav h1 {
+    font-size: 4em; }
+  .nav ul {
+    font-size: 2em; }
   .shows {
     width: 60%; }
     .shows h1 {
@@ -101,11 +100,7 @@ a {
     .shows ul {
       font-size: 1.5em; }
   body {
-    font-size: 15px; } }
-
-@media (max-height: 500px) {
-  .nav {
-    bottom: -60%; } }
+    font-size: 20px; } }
 
 .errorImg {
   display: flex;
@@ -114,3 +109,13 @@ a {
 
 .errorText {
   text-align: center; }
+
+.newsImage {
+  height: 20vw;
+  width: 20vw;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.newsDescriptions {
+  display: flex;
+  flex-direction: column; }
