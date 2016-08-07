@@ -13,6 +13,16 @@ $(document).ready(function(){
         $newsNav = $('#newsNav'),
         $newsDiv = $('.news');
 
+    Handlebars.registerHelper('attr', function(name, data) {
+        if(typeof target === 'undefined') {
+            var target = "";
+        }
+
+        var result = ' ' + name + '="' + data +  '" ';
+
+        return new Handlebars.SafeString(result);
+    });
+
     (function init(){
         $showsDiv.hide();
         $newsDiv.hide();
@@ -61,7 +71,6 @@ $(document).ready(function(){
     }
 
     function getNews(){
-        //ajax request to Facebook API
         var news = $.ajax({
             url: '/api/news',
             method: 'GET'
@@ -69,7 +78,6 @@ $(document).ready(function(){
 
         //Bluebird promise
         Promise.resolve(news)
-            //runs when fbEvents is fullfilled
             .then(function(results){
                 if(results){
                     displayNews(results);
@@ -86,6 +94,9 @@ $(document).ready(function(){
 
     function displayNews(data){
         var $newsDiv = $('.newsDescriptions');
+        data.forEach(function(news){
+           news.backgroundImg = 'background-image: url(\'' + news.imageUrl + '\')';
+        });
 
         var newsTemplateScript = $("#news-template").html();
         //Compile the template​

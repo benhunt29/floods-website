@@ -45,8 +45,10 @@
 
     <script id="news-template" type="x-handlebars-template">​
       {{#each this}}
-      <h1>{{date}}</h1>
-      <p>{{{content}}}</p>
+        <h1>{{date}}</h1>
+        <p>{{{content}}}</p>
+        <div class="newsImage" {{attr 'style' backgroundImg}}></div>
+
       {{/each}}
     </script> 
 
