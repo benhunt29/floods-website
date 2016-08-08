@@ -52,7 +52,7 @@ p {
 .nav {
   text-align: end;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
   align-self: flex-end;
   margin-right: 20px; }
   .nav li {
@@ -68,7 +68,7 @@ p {
   height: 100%;
   overflow-wrap: break-word;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
   align-self: flex-start;
   margin-left: 20px; }
   .shows h1, .news h1 {
