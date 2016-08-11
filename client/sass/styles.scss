@@ -115,31 +115,6 @@ a {
   color: $textColor;
 }
 
-@media (max-device-width: 900px) {
-  .nav {
-    h1{
-      font-size: 4em;
-    }
-    ul {
-      font-size: 2em;
-    }
-  }
-
-  .shows{
-    h1{
-      font-size: 3em;
-    }
-    ul {
-      font-size: 1.5em;
-    }
-    width: 60%;
-
-  }
-  body{
-    font-size: 20px;
-  }
-}
-
 .errorImg {
   display: flex;
   justify-content: center;

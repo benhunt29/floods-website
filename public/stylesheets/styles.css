@@ -88,20 +88,6 @@ a {
   text-decoration: none;
   color: #fff; }
 
-@media (max-device-width: 900px) {
-  .nav h1 {
-    font-size: 4em; }
-  .nav ul {
-    font-size: 2em; }
-  .shows {
-    width: 60%; }
-    .shows h1 {
-      font-size: 3em; }
-    .shows ul {
-      font-size: 1.5em; }
-  body {
-    font-size: 20px; } }
-
 .errorImg {
   display: flex;
   justify-content: center;
