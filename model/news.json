@@ -1,7 +1,14 @@
 {
-  "news": [{
-    "date": "08/06/2016",
-    "content": "The debut album, <em>Echo</em>, is finished and scheduled to be released on 8/12/2016. Visit our <a href='http://www.floods-mpls.bandcamp.com'>Bandcamp</a> for digital copies. CDs and cassettes will be available at shows.",
-    "imageUrl": "/images/album_cover.jpg"
-  }]
+  "news": [
+    {
+      "date": "08/23/2016",
+      "content": "The debut album, <em>Echo</em>, has been released and is available on our <a href='http://www.floods-mpls.bandcamp.com'>Bandcamp</a>. Physical CDs can be bought at shows or <a href='http://kunaki.com/sales.asp?PID=PX000DYKOY'>here</a>.",
+      "imageUrl": "/images/album_cover.jpg"
+    },
+    {
+      "date": "08/06/2016",
+      "content": "The debut album, <em>Echo</em>, is finished and scheduled to be released on 8/12/2016. Visit our <a href='http://www.floods-mpls.bandcamp.com'>Bandcamp</a> for digital copies. CDs and cassettes will be available at shows.",
+      "imageUrl": "/images/album_cover.jpg"
+    }
+  ]
 }
