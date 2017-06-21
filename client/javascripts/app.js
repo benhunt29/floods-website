@@ -51,17 +51,17 @@ $(document).ready(function () {
 
     var map = {
       '': function () {
-          $showsDiv.hide()
-          $newsDiv.hide()
-        },
+        $showsDiv.hide()
+        $newsDiv.hide()
+      },
       '#shows': function () {
-          $newsDiv.hide()
-          $showsDiv.show()
-        },
+        $newsDiv.hide()
+        $showsDiv.show()
+      },
       '#news': function () {
-          $showsDiv.hide()
-          $newsDiv.show()
-        }
+        $showsDiv.hide()
+        $newsDiv.show()
+      }
     }
 
     if (map[temp]) {
@@ -134,20 +134,20 @@ $(document).ready(function () {
       var showToDisplay = {}
 
       if (item.place) {
-          showToDisplay.title = item.name
-          showToDisplay.date = moment(item.start_time).format('MMMM DD YYYY')
-          showToDisplay.time = moment(item.start_time).format('hh:mm a')
-          showToDisplay.venue = item.place.name
-          showToDisplay.city = item.place.location.city
-          showToDisplay.state = item.place.location.state
-          showsArray.push(showToDisplay)
-        }
+        showToDisplay.title = item.name
+        showToDisplay.date = item.start_time ? moment(item.start_time).format('MMMM DD YYYY') : ''
+        showToDisplay.time = item.start_time ? moment(item.start_time).format('hh:mm a') : ''
+        showToDisplay.venue = item.place.name || ''
+        showToDisplay.city = (item.place.location && item.place.location.city) || ''
+        showToDisplay.state = (item.place.location && item.place.location.state) || ''
+        showsArray.push(showToDisplay)
+      }
     })
 
         // sort by date
     showsArray.sort(function (a, b) {
       var date1 = moment(a.date, 'MMMM DD YYYY'),
-          date2 = moment(b.date, 'MMMM DD YYYY')
+        date2 = moment(b.date, 'MMMM DD YYYY')
       if (date1.isAfter(date2)) return -1
       else if (date1.isBefore(date2)) return 1
       else return 0

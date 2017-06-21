@@ -1,6 +1,20 @@
 {
   "news": [
     {
+      "date": "06/20/2017",
+      "content": "Floods is releasing a new EP, <em>1880</em>, the release date will be announced soon!",
+      "imageUrl": "/images/1880_album_art_cover.jpg"
+    },
+    {
+      "date": "06/01/2017",
+      "content": "Floods is going on tour later this summer, check out the list below. <ul><li>8/4 House show - Denver, Co</li><li>8/5 Lion's Lair​ - Denver, Co</li><li>8/6 The Shredder​ - Boise, ID</li><li>8/7 Twilight Cafe and Bar​ - Portland, OR</li><li>8/9 Funhouse Seattle - Seattle, WA</li><li>8/11 Why Not Fest - Minot, ND</li><li>8/12 DogMahal DogHaus​ - Grand Forks, ND</li></ul>"
+    },
+    {
+      "date": "03/08/2017",
+      "content": "Floods is now on Spotify! Find us <a href='https://open.spotify.com/artist/2UivIBqcUo3J40U6Jqit33'a>here</a>.",
+      "imageUrl": "/images/album_cover.jpg"
+    },
+    {
       "date": "08/23/2016",
       "content": "The debut album, <em>Echo</em>, has been released and is available on our <a href='http://www.floods-mpls.bandcamp.com'>Bandcamp</a>. Physical CDs can be bought at shows or <a href='http://kunaki.com/sales.asp?PID=PX000DYKOY'>here</a>.",
       "imageUrl": "/images/album_cover.jpg"
