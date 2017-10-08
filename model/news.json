@@ -3,12 +3,12 @@
     {
       "date": "07/14/2017",
       "content": "Floods' new EP, <em>1880</em>, is out! You can find it on our <a href='https://floods-mpls.bandcamp.com/album/1880'>Bandcamp</a>, on <a href='https://open.spotify.com/album/5E9KHJwg20BToYXnHSofyU'>Spotify</a>, on <a href='https://itunes.apple.com/us/album/1880-ep/id1258246890'>Itunes</a>, and <a href='https://play.google.com/store/music/album/Floods_1880?id=Bngq4vsl2rjwyrmxlyaakcwupmm'>Google Play Music</a>. Physical copies of CDs can be purchased at shows.",
-      "imageUrl": "/images/1880_album_art_cover.jpg"
+      "imageUrl": "https://s3-us-west-2.amazonaws.com/fuzzbrains.com/images/1880_album_art_cover.jpg"
     },
     {
       "date": "06/20/2017",
       "content": "Floods is releasing a new EP, <em>1880</em>, it will be available on our <a href='http://www.floods-mpls.bandcamp.com'>Bandcamp</a> and on Spotify and Itunes on 7/14/2017. Physical CDs can be bought at shows.",
-      "imageUrl": "/images/1880_album_art_cover.jpg"
+      "imageUrl": "https://s3-us-west-2.amazonaws.com/fuzzbrains.com/images/1880_album_art_cover.jpg"
     },
     {
       "date": "06/01/2017",
@@ -17,17 +17,17 @@
     {
       "date": "03/08/2017",
       "content": "Floods is now on Spotify! Find us <a href='https://open.spotify.com/artist/2UivIBqcUo3J40U6Jqit33'a>here</a>.",
-      "imageUrl": "/images/album_cover.jpg"
+      "imageUrl": "https://s3-us-west-2.amazonaws.com/fuzzbrains.com/images/album_cover.jpg"
     },
     {
       "date": "08/23/2016",
       "content": "The debut album, <em>Echo</em>, has been released and is available on our <a href='http://www.floods-mpls.bandcamp.com'>Bandcamp</a>. Physical CDs can be bought at shows or <a href='http://kunaki.com/sales.asp?PID=PX000DYKOY'>here</a>.",
-      "imageUrl": "/images/album_cover.jpg"
+      "imageUrl": "https://s3-us-west-2.amazonaws.com/fuzzbrains.com/images/album_cover.jpg"
     },
     {
       "date": "08/06/2016",
       "content": "The debut album, <em>Echo</em>, is finished and scheduled to be released on 8/12/2016. Visit our <a href='http://www.floods-mpls.bandcamp.com'>Bandcamp</a> for digital copies. CDs and cassettes will be available at shows.",
-      "imageUrl": "/images/album_cover.jpg"
+      "imageUrl": "https://s3-us-west-2.amazonaws.com/fuzzbrains.com/images/album_cover.jpg"
     }
   ]
 }

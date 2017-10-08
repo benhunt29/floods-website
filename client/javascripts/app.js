@@ -6,6 +6,11 @@ var moment = require('moment')
 'use strict'
 
 $(document).ready(function () {
+  $.ajaxSetup({
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
   var
     $showsDiv = $('.shows'),
     $showsNav = $('#showsNav'),
@@ -71,7 +76,7 @@ $(document).ready(function () {
 
   function getNews () {
     var news = $.ajax({
-      url: '/api/news',
+      url: 'https://ll8ifqg9l1.execute-api.us-west-2.amazonaws.com/production/api/news',
       method: 'GET'
     })
 
@@ -106,7 +111,7 @@ $(document).ready(function () {
   function getShows () {
         // ajax request to Facebook API
     var fbEvents = $.ajax({
-      url: '/api/events',
+      url: 'https://ll8ifqg9l1.execute-api.us-west-2.amazonaws.com/production/api/events',
       method: 'GET'})
         // Bluebird promise
     Promise.resolve(fbEvents)

@@ -1,0 +1,24 @@
+service:
+  name: floodsWebsite
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: production
+  region: us-west-2
+package:
+  exclude:
+    - .gitignore
+    - ./client
+    - ./public/images
+    - ./public/bundle
+    - ./public/stylesheets
+functions:
+  expressHandler:
+    handler: app.handler
+    events:
+      - http: 
+          path: /api/{proxy+}
+          method: any
+      - http:
+          path: /
+          method: get
