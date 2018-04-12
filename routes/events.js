@@ -17,7 +17,7 @@ router.get('/', function (req, res, next) {
 
 function getShows () {
   const options = {
-    uri: 'https://graph.facebook.com/v2.6/' + process.env.FB_ID + '/events?access_token=' + process.env.FB_ACCESS_TOKEN,
+    uri: 'https://graph.facebook.com/v2.12/' + process.env.FB_ID + '/events?access_token=' + process.env.FB_ACCESS_TOKEN,
     json: true // Automatically parses the JSON string in the response
   }
 

@@ -1,0 +1,5 @@
+{
+  "resource": "/",
+  "path": "/api/events",
+  "httpMethod": "GET"
+}
